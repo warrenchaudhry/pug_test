@@ -10,5 +10,7 @@ html
 
   body
     .container
+      - if logged_in?
+        = render "layouts/navbar"
       = render 'shared/flash_messages'
       == yield

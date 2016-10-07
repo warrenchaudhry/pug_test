@@ -1,15 +1,24 @@
-.page-header
-  h2.text-xs-center Login
-hr
+#welcome-page
+  #feature.row
+    .col-sm-8
+      = image_tag('welcome_pug.jpg', alt: 'Welcome Pug Image', class: 'img-fluid pug-img-left')
+    .col-sm-4
+      = image_tag('welcome_text.jpg', alt: 'Welcome Text Image', class: 'img-fluid pug-text-left')
+    .clearfix
 
-.m-x-auto style="width:400px"
-  = simple_form_for :user, url: sessions_path  do |f|
+  .row
+    .offset-sm-3.col-sm-6
+      - if @login_failed
+        .container
+         .alert.alert-warning Invalid email or password
 
-    fieldset
-      .form-inputs
-        = f.input :email, autofocus: true, placeholder: 'Email', label: false
-        = f.input :password, placeholder: 'Password', label: false, hint: false
+      = simple_form_for :user, url: sessions_path, html: {class: 'form-signin'}, wrapper: :login_form  do |f|
+        .col-sm-8
+          fieldset
+            .form-inputs
+              = f.input :email, autofocus: true
+              = f.input :password
 
-
-      .form-actions
-        = f.button :submit, 'Login', class: 'btn btn-primary'
+        .col-sm-4
+          .form-actions style="vertical-align: center;"
+            = f.button :submit, 'Login', class: 'btn btn-secondary btn-login'

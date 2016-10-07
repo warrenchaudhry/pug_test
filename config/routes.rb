@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get '/dashboards', to: 'dashboards#index', as: :dashboards
 
   resources :users, only: [:new, :create]
-  get '/sign_up', to: 'users#new', as: :sign_up
+  get '/signup', to: 'users#new', as: :sign_up
 
   resources :sessions, only: [:new, :create, :destroy]
   get '/login', to: 'sessions#new', as: :login

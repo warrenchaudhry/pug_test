@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
       flash[:success] = 'Welcome back!'
       redirect_back_or_to dashboards_path
     else
-      flash.now[:warning] = 'E-mail and/or password is incorrect.'
+      @login_failed = true
       render :new
     end
   end

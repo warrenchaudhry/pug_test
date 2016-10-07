@@ -67,6 +67,20 @@ SimpleForm.setup do |config|
     end
   end
 
+  config.wrappers :login_form, tag: 'div', class: 'form-group row' do |b|
+    b.use :html5
+    b.use :placeholder
+    b.optional :maxlength
+    b.optional :pattern
+    b.optional :min_max
+    b.optional :readonly
+    b.use :label, class: 'col-xs-4 col-form-label'
+
+    b.wrapper tag: 'div', class: 'col-xs-8' do |ba|
+      ba.use :input, class: 'form-control'
+    end
+  end
+
   config.wrappers :horizontal_file_input, tag: 'div', class: 'form-group', error_class: 'has-error' do |b|
     b.use :html5
     b.use :placeholder

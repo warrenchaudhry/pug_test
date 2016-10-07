@@ -1,0 +1,19 @@
+nav.navbar.navbar-dark.bg-inverse
+  button.navbar-toggler.hidden-sm-up type="button" data-toggle="collapse" data-target="#navbar-header" aria-expanded="false" aria-controls="navbar-header"
+    | ☰
+  #navbar-header.collapse.navbar-toggleable-xs
+    = link_to "Pugs", '/', class: 'navbar-brand'
+    - if logged_in?
+      ul.nav.navbar-nav
+        li.nav-item.active
+          = link_to dashboards_path, class: 'nav-link' do
+            | Dashboard
+            span.sr-only
+              | (current)
+      ul.nav.navbar-nav.pull-xs-right
+        li.nav-item
+          = link_to '#', class: 'nav-link' do
+            | #{current_user.name}
+        li.nav-item
+          = link_to logout_path, class: 'nav-link', data: {method: :delete} do
+            | Logout
