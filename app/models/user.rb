@@ -12,4 +12,14 @@ class User < ApplicationRecord
   def name
     "#{first_name} #{last_name}"
   end
+
+  def role
+    if is_admin?
+      'admin'
+    elsif is_paying?
+      'paying'
+    else
+      'free'
+    end
+  end
 end

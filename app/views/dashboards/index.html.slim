@@ -1,2 +1,12 @@
-h1 Dashboards#index
-p Restricted area for authorized users only.
+#dashboards
+  #feature.row
+    .col-sm-8
+      = image_tag("#{current_user.role}_pug.jpg", alt: "#{current_user.role.titleize} Pug Image", class: 'img-fluid pug-img-left')
+    .col-sm-4
+      = image_tag("#{current_user.role}_text.jpg", alt: '#{current_user.role.titleize} Text Image', class: 'img-fluid pug-text-left')
+      ul#user-info.list-unstyled
+        li.text-xs-right = current_user.name
+        li.text-xs-right = current_user.age
+        li.text-xs-right = current_user.country
+        li.text-xs-right = current_user.language.capitalize
+    .clearfix
