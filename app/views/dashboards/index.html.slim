@@ -1,12 +1,19 @@
-#dashboards
-  #feature.row
-    .col-sm-8
-      = image_tag("#{current_user.role}_pug.jpg", alt: "#{current_user.role.titleize} Pug Image", class: 'img-fluid pug-img-left')
-    .col-sm-4
-      = image_tag("#{current_user.role}_text.jpg", alt: '#{current_user.role.titleize} Text Image', class: 'img-fluid pug-text-left')
-      ul#user-info.list-unstyled
-        li.text-xs-right = current_user.name
-        li.text-xs-right = current_user.age
-        li.text-xs-right = current_user.country
-        li.text-xs-right = current_user.language.capitalize
+#dashboard
+  .jumbotron.offset-sm-2.col-sm-8
+    .offset-sm-1.col-sm-10
+      .media
+        .media-left
+          = image_tag('logo.jpg', class: 'media-object logo')
+        .media-body
+          h2.media-heading = prettify_role(current_user.role)
+    .clearfix
+    .offset-sm-1.col-sm-10
+      .card.card-block
+        h5.card-title User Information
+        ul.list-unstyled
+          li: b NAME: #{current_user.name}
+          li: b AGE: #{current_user.age}
+          li: b COUNTRY: #{current_user.country}
+          li: b LANGUAGE: #{current_user.language}
+
     .clearfix

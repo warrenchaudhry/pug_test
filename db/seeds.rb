@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 admin = User.find_by(email: 'juandelacruz@email.com')
 unless admin.present?
-  admin = User.create(email: 'juandelacruz@email.com', password: 'password1234', password_confirmation: 'password1234', first_name: 'Juan', last_name: 'Dela Cruz', country: 'Phlippines', language: 'Filipino', is_admin: true, age: 25)
+  admin = User.create(email: 'juandelacruz@email.com', password: 'password1234', password_confirmation: 'password1234', first_name: 'Juan', last_name: 'Dela Cruz', country: 'Phlippines', language: 'Filipino', is_admin: true, age: 27)
 end
 
 paying = User.find_by(email: 'juanitadelacruz@email.com')

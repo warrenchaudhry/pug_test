@@ -1,24 +1,26 @@
 #welcome-page
-  #feature.row
-    .col-sm-8
-      = image_tag('welcome_pug.jpg', alt: 'Welcome Pug Image', class: 'img-fluid pug-img-left')
-    .col-sm-4
-      = image_tag('welcome_text.jpg', alt: 'Welcome Text Image', class: 'img-fluid pug-text-left')
+  .jumbotron.offset-sm-2.col-sm-8
+    .offset-sm-1.col-sm-10
+        = image_tag('logo.jpg', class: 'img-fluid logo')
     .clearfix
+    .offset-sm-1.col-sm-10
+      .card.card-block
+        h4 Sign in
 
-  .row
-    .offset-sm-3.col-sm-6
-      - if @login_failed
-        .container
-         .alert.alert-warning Invalid email or password
+        - if @login_failed
+          .container
+           .alert.alert-warning Invalid email or password
 
-      = simple_form_for :user, url: sessions_path, html: {class: 'form-signin'}, wrapper: :login_form  do |f|
-        .col-sm-8
-          fieldset
-            .form-inputs
-              = f.input :email, autofocus: true
-              = f.input :password
+        = simple_form_for :user, url: sessions_path, html: {class: 'form-horizontal form-signin'}  do |f|
+            .col-sm-8
+              fieldset
+                .form-inputs
+                  = f.input :email, autofocus: true
+                  = f.input :password
 
-        .col-sm-4
-          .form-actions style="vertical-align: center;"
-            = f.button :submit, 'Login', class: 'btn btn-secondary btn-login'
+            .col-sm-4
+              .form-actions style="vertical-align: center;"
+                = f.button :submit, 'LOGIN', class: 'btn btn-secondary btn-login'
+
+
+    .clearfix
