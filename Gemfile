@@ -46,6 +46,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails', '~> 4.7.0'
   gem 'faker', git: 'git@github.com:stympy/faker.git'
+  gem 'shoulda-matchers', '~> 2.8.0', require: false
 end
 
 group :test do
