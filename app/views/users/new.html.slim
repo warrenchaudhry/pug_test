@@ -1,0 +1,19 @@
+.page-header
+  h2.text-xs-center Signup
+hr
+
+.m-x-auto style="width:400px"
+  = simple_form_for @user do |f|
+    = f.error_notification
+    fieldset
+      .form-inputs
+
+        = f.input :first_name
+        = f.input :last_name
+        = f.input :country, prompt: 'Select Country'
+        = f.input :language
+        = f.input :password
+        = f.input :password_confirmation
+
+      .form-actions
+        = f.button :submit, class: 'btn btn-primary'

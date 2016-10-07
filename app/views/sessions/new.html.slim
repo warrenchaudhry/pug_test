@@ -1,0 +1,15 @@
+.page-header
+  h2.text-xs-center Login
+hr
+
+.m-x-auto style="width:400px"
+  = simple_form_for :user, url: sessions_path  do |f|
+
+    fieldset
+      .form-inputs
+        = f.input :email, autofocus: true, placeholder: 'Email', label: false
+        = f.input :password, placeholder: 'Password', label: false, hint: false
+
+
+      .form-actions
+        = f.button :submit, 'Login', class: 'btn btn-primary'

@@ -32,6 +32,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.0.0.alpha4'
 gem 'slim-rails'
 gem 'simple_form'
+gem 'country_select'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
@@ -47,6 +48,7 @@ group :development, :test do
   gem 'factory_girl_rails', '~> 4.7.0'
   gem 'faker', git: 'git@github.com:stympy/faker.git'
   gem 'shoulda-matchers', '~> 2.8.0', require: false
+  gem 'rails-controller-testing'
 end
 
 group :test do

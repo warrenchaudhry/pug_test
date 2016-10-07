@@ -5,8 +5,8 @@ FactoryGirl.define do
     last_name             { Faker::Name.last_name }
     country               'Philippines'
     language              'English'
-    password              "password"
-    password_confirmation "password"
+    password              "password1234"
+    password_confirmation "password1234"
 
     trait :admin do
       is_admin      true
