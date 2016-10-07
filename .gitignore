@@ -10,6 +10,11 @@
 # Ignore the default SQLite database.
 /db/*.sqlite3
 /db/*.sqlite3-journal
+capybara-*.html
+.rspec
+/spec/tmp
+**.orig
+rerun.txt
 
 # Ignore all logfiles and tempfiles.
 /log/*

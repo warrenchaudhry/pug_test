@@ -7,6 +7,7 @@ FactoryGirl.define do
     language              'English'
     password              "password1234"
     password_confirmation "password1234"
+    age                   20
 
     trait :admin do
       is_admin      true

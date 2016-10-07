@@ -10,7 +10,8 @@ RSpec.describe UsersController, type: :controller do
                 password: "admin1234",
                 password_confirmation: "admin1234",
                 country: 'Philippines',
-                language: 'Filipino'
+                language: 'Filipino',
+                age: 21
                }
   end
   let(:invalid_attributes) { build_attributes(:user, first_name: nil, last_name: nil, email: nil) }

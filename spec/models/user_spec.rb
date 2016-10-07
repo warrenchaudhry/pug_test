@@ -13,6 +13,7 @@ RSpec.describe User, type: :model do
   it { should respond_to(:language) }
   it { should respond_to(:is_paying) }
   it { should respond_to(:is_admin) }
+  it { should respond_to(:age) }
 
   describe "Validations" do
     it { should validate_presence_of(:email) }
@@ -39,6 +40,11 @@ RSpec.describe User, type: :model do
 
     it "is not valid without a country" do
       subject.last_name = nil
+      expect(subject).to_not be_valid
+    end
+
+    it "is not valid with age as string" do
+      subject.age = 'ab'
       expect(subject).to_not be_valid
     end
 

@@ -13,11 +13,12 @@
 ActiveRecord::Schema.define(version: 20161005154306) do
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                            null: false
-    t.string   "first_name",                       null: false
-    t.string   "last_name",                        null: false
-    t.string   "country",                          null: false
-    t.string   "language",                         null: false
+    t.string   "email"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "country"
+    t.string   "language"
+    t.string   "age"
     t.boolean  "is_paying",        default: false
     t.boolean  "is_admin",         default: false
     t.string   "crypted_password"
