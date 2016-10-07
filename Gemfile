@@ -45,7 +45,7 @@ group :development, :test do
   gem 'byebug', platform: :mri
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails', '~> 4.7.0'
-  gem 'faker', git: 'git@github.com:stympy/faker.git'
+  gem 'faker'
   gem 'shoulda-matchers', '~> 2.8.0', require: false
   gem 'rails-controller-testing'
 end
